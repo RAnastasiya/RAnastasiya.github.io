@@ -1,13 +1,10 @@
-body{
-  padding: 40px;
-}
 .progress {
   position: relative;
   width: 640px;
   height: 60px;
   overflow: hidden;
   background: #ff3232;
-  background: linear-gradient(to right, #ff3232 0%,#ff9600 33%,#ffff00 66%,#00ff00 100%);
+  background: linear-gradient(to right, #1E90FF 17%, #00ff00 23%,#ffff00 30%,#FF4500 80%);
 }
 
 .strips {
@@ -22,13 +19,13 @@ body{
 
 .grayback {
   position: relative;
-  left: 20%; /* Текущее состояние */
+  left: 100%; /* Текущее состояние */
   width: 100%;
   height: 100%;
   background-color: #ddd;
 }
 
- input.form-control{
+input.form-control{
   max-width: 240px;
   margin-top: 5px;
   margin-bottom: 8px;
@@ -60,4 +57,10 @@ input.form-radio{
   width: 300px; /* Ширина слоя */
   float: left; /* Обтекание по правому краю */
   margin: 8px;
+}
+.form-two{
+  position: fixed; top: 60%; left: 30%;
+ -webkit-transform: translate(-30%, -70%);
+ -ms-transform: translate(-30%, -70%);
+ transform: translate(-30%, -70%);
 }

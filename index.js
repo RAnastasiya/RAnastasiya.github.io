@@ -17,7 +17,24 @@ Termostat.prototype.setUpper = function(){
   this.changeTemp(this.currentTemp);
 }
 
-function operation(min, max, power, currentTemperature){
+function startTwoParam(){
+  console.log(document.getElementById('radiobTwo').checked);
+  console.log(document.getElementById('radiobOne').checked);
+  var min = Number(document.getElementById("min").value) + 20;
+  var max = Number(document.getElementById("max").value) + 20;
+  var currentTemperature =  Number(document.getElementById("currentTempTwo").value) + 20;
+  operation(min, max, currentTemperature);
+}
+function startOneParam(){
+  var comfort = Number(document.getElementById("comfort").value) + 20;
+  var min = comfort - 3;
+  var max =  comfort + 3;
+  var currentTemperature =  Number(document.getElementById("currentTempOne").value) + 20;
+  operation(min, max, currentTemperature);
+}
+
+function operation(min, max, currentTemperature){
+  var power = document.getElementById("power").value;
   var termostat = new Termostat(min, max, power, currentTemperature);
    if(termostat.upper == ''){
      console.log("error");
@@ -31,13 +48,8 @@ function operation(min, max, power, currentTemperature){
      }else {
        termostat.hoting = false;
      }
-     console.log(termostat.upper);
-     console.log(termostat.lower);
+     var elements = document.querySelectorAll('body > div.current-temp.text > h1')
      setInterval( function(){
-       var temper = termostat.currentTemp - 20;
-       var elements = document.querySelectorAll('body > div.current-temp.text > h1')
-       elements[0].innerHTML  = temper;
-       console.log(temper);
        if((termostat.currentTemp < termostat.upper)&& termostat.hoting){
          termostat.setUpper();
          if(termostat.currentTemp >= termostat.upper){
@@ -49,23 +61,8 @@ function operation(min, max, power, currentTemperature){
            termostat.hoting = true;
            }
        }
+       var temper = termostat.currentTemp - 20;
+       elements[0].innerHTML  = temper;
      }, 1000);
    }
-}
-
-function startTwoParam(){
-  var min = Number(document.getElementById("min").value) + 20;
-  var max = Number(document.getElementById("max").value) + 20;
-  var power = document.getElementById("power").value;
-  var currentTemperature = Number(document.getElementById("currentTemp").value) + 20;
-  operation(min, max, power, currentTemperature);
-}
-
-function startOneParam(){
-  var comfort = Number(document.getElementById("comfort").value) + 20;
-  var min = comfort - 3;
-  var max =  comfort + 3;
-  var power = document.getElementById("power").value;
-  var currentTemperature = Number(document.getElementById("currentTemp").value) + 20;
-  operation(min, max, power, currentTemperature);
 }

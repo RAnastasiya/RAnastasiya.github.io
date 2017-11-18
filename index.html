@@ -11,71 +11,69 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="form-group">
-		<center>
-			<div>
-		    <label>
-		    <input id="radiob" class="form-radio" type="radio" size="20">
-				Thermostat with a choice of two parameters</label>
-		  </div>
-		  <div>
-		    <label>Initial room temperature ([-20 ... 60])</label>
-		    <input id="currentTemp" class="form-control" type="number" size="20" min="-20" max="60">
-		  </div>
-		  <div>
-		    <label>Switch-on temperature</label>
-		    <input id="min" class="form-control" type="number" size="20" min="-20" max="60">
-		  </div>
-		  <div>
-		    <label>Switch-off temperature</label>
-		    <input id="max" class="form-control" type="number" size="20" min="-20" max="60">
-		  </div>
-	    <div>
-		    <label>Power</label>
-		    <input id="power" class="form-control" type="number" size="20" min="1" max="3">
-	    </div>
-	  	<input class="btn btn-success" type="submit" onclick="startTwoParam()"/>
-		</center>
-	</div>
-	<div class="form-group">
-		<center>
-			<div>
-		    <label>
-		    <input id="radiob" class="form-radio" type="radio" size="20">
-				Thermostat with a choice of one parameter<Br>
-					Temperature deviation: &plusmn; 3
-				</label>
-		  </div>
-			<Br>
-		  <div>
-		    <label>Initial room temperature ([-20 ... 60])</label>
-		    <input id="currentTemp" class="form-control" type="number" size="20" min="-20" max="60">
-		  </div>
-		  <div>
-		    <label>Comfortable temperature</label>
-		    <input id="comfort" class="form-control" type="number" size="20" min="-20" max="60">
-		  </div>
-	    <div>
-		    <label>Power</label>
-		    <input id="power" class="form-control" type="number" size="20" min="1" max="3">
-	    </div>
-	  	<input class="btn btn-success  btn-submit" type="submit" onclick="startOneParam()"/>
-		</center>
-	</div>
-  <Br><Br>
-	<div class="current-temp">
-		<h1>Current temperature: </h1>
-	</div>
-	<div class="current-temp text">
-		<h1></h1>
-	</div>
-  <div class="progress">
-  <div id="grayback" class="grayback"></div>
-  <div class="strips"></div>
-  </div>
-
-  <p>...Конец документа</p>
-
+	<div class="form-two">
+	  <div class="form-group">
+			<center>
+				<div>
+			    <label>
+			    <input id="radiobTwo" class="form-radio" type="radio" checked="checked" name="form-thermostat" size="20">
+					Thermostat with a choice of two parameters</label>
+			  </div>
+			  <div>
+			    <label>Initial room temperature ([-20 ... 60])</label>
+			    <input id="currentTempTwo" class="form-control" type="number" size="20" min="-20" max="60">
+			  </div>
+			  <div>
+			    <label>Switch-on temperature</label>
+			    <input id="min" class="form-control" type="number" size="20" min="-20" max="60">
+			  </div>
+			  <div>
+			    <label>Switch-off temperature</label>
+			    <input id="max" class="form-control" type="number" size="20" min="-20" max="60">
+			  </div>
+		    <div>
+			    <label>Power</label>
+			    <input id="power" class="form-control" type="number" size="20" min="1" max="3">
+		    </div>
+		  	<input class="btn btn-success" type="submit" onclick="startTwoParam()"/>
+			</center>
+		</div>
+		<div class="form-group">
+			<center>
+				<div>
+			    <label>
+			    <input id="radiobOne" class="form-radio" type="radio" name="form-thermostat" size="20">
+					Thermostat with a choice of one parameter<Br>
+						Temperature deviation: &plusmn; 3
+					</label>
+			  </div>
+				<Br>
+				<div>
+			    <label>Initial room temperature ([-20 ... 60])</label>
+			    <input id="currentTempOne" class="form-control" type="number" size="20" min="-20" max="60">
+			  </div>
+			  <div>
+			    <label>Comfortable temperature</label>
+			    <input id="comfort" class="form-control" type="number" size="20" min="-20" max="60">
+			  </div>
+		    <div>
+			    <label>Power</label>
+			    <input id="power" class="form-control" type="number" size="20" min="1" max="3">
+		    </div>
+		  	<input class="btn btn-success  btn-submit" type="submit" onclick="startOneParam()"/>
+			</center>
+		</div>
+		<div class="current-temp">
+			<h1>Current temperature: </h1>
+		</div>
+		<div class="current-temp text">
+			<h1></h1>
+		</div>
+	  <div class="progress">
+	  <div id="grayback" class="grayback"></div>
+	  <div class="strips"></div>
+	  </div>
+ </div>
 </body>
 <script src="index.js"></script>
 </html>
