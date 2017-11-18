@@ -17,24 +17,9 @@ Termostat.prototype.setUpper = function(){
   this.changeTemp(this.currentTemp);
 }
 
-function startTwoParam(){
-  console.log(document.getElementById('radiobTwo').checked);
-  console.log(document.getElementById('radiobOne').checked);
-  var min = Number(document.getElementById("min").value) + 20;
-  var max = Number(document.getElementById("max").value) + 20;
-  var currentTemperature =  Number(document.getElementById("currentTempTwo").value) + 20;
-  operation(min, max, currentTemperature);
-}
-function startOneParam(){
-  var comfort = Number(document.getElementById("comfort").value) + 20;
-  var min = comfort - 3;
-  var max =  comfort + 3;
-  var currentTemperature =  Number(document.getElementById("currentTempOne").value) + 20;
-  operation(min, max, currentTemperature);
-}
-
 function operation(min, max, currentTemperature){
   var power = document.getElementById("power").value;
+  console.log("currentTemperature - " + currentTemperature);
   var termostat = new Termostat(min, max, power, currentTemperature);
    if(termostat.upper == ''){
      console.log("error");
