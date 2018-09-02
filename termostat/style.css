@@ -1,0 +1,66 @@
+.progress {
+  position: relative;
+  width: 640px;
+  height: 60px;
+  overflow: hidden;
+  background: #ff3232;
+  background: linear-gradient(to right, #1E90FF 17%, #00ff00 23%,#ffff00 30%,#FF4500 80%);
+}
+
+.strips {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to right, transparent 0%, transparent 50%, #fff 50%, #fff 100%);
+  background-size: 8px 100%; /* Ширина деления = 6px / 2 = 3px */
+}
+
+.grayback {
+  position: relative;
+  left: 100%; /* Текущее состояние */
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+}
+
+input.form-control{
+  max-width: 240px;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+input.btn-submit{
+ margin-top: 32px;
+}
+.current-temp {
+  padding: 12px; /* Поля вокруг текста */
+  width: 380px; /* Ширина слоя */
+  float: left; /* Обтекание по правому краю */
+  margin: 8px;
+}
+.text{
+  padding: 12px;
+  width: 80px; /* Ширина слоя */
+  margin: 8px;
+}
+
+input.form-radio{
+ max-width: 40px;
+ margin-top: 5px;
+ margin-bottom: 8px;
+}
+
+.form-group {
+  background-color: #c0c0c0; /* Цвет фона слоя */
+  padding: 12px; /* Поля вокруг текста */
+  width: 300px; /* Ширина слоя */
+  float: left; /* Обтекание по правому краю */
+  margin: 8px;
+}
+.form-two{
+  position: fixed; top: 60%; left: 30%;
+ -webkit-transform: translate(-30%, -70%);
+ -ms-transform: translate(-30%, -70%);
+ transform: translate(-30%, -70%);
+}
